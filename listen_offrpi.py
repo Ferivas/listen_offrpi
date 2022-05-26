@@ -2,11 +2,22 @@
 listen_offrpi.py
 Permite apagar de manera segura el Raspberry presionando un pulsante conectado
 entre un GPIO y el GND del Rpi(pinoff)
-Si esta programa esta corriendo tambien se enciende un led coenctado a un GPIO
+Si esta programa esta corriendo tambien se enciende un led conectado a un GPIO
 del Rpi, (ledsta)
 Es necesario mantener presionado el pulsante durante aproximadamente 3 segundos
 para que se apague el Rpi. Mientras se tiene presionado el pulsante, el ledsta
 titila
+El GPIO utilizado para conectar el pulsante, el GPIO utilizado para conectar un
+led para señalización y su polarización se determinan con un archivo de texto 
+en formato json que se puede editar si se utilizan pines diferentes. 
+La polaridad se refiere a la forma en que se conecta el led a la salida del GPIO.
+Si se conecta a través de una resistencia a GND se considera polaridad 1, 
+mientras que si el led se conecta por medio de una resistencia a VCC se considera
+que la polaridas es 0. 
+Si no se encuentra el archivo de configuración (listen_offrpi.json) el programa
+configura las variables de la siguiente manera
+
+{"ledsta": 17, "pinoff": 27, "polaridad": 1}
 
 '''
 #!/usr/bin/env python
