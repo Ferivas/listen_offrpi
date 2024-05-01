@@ -1,0 +1,14 @@
+[Unit]
+Description=Shutdown por Pulsante seal LED
+After=multi-user.target
+
+[Service]
+Type=idle
+Restart=on-failure
+
+WorkingDirectory=/home/pi/listen_offrpi
+ExecStart=/usr/bin/python3 /home/pi/listen_offrpi/shutdwnbypin.py &
+
+[Install]
+WantedBy=multi-user.target
+
