@@ -8,4 +8,16 @@ Si no se encuentra el archivo de configuración (listen_offrpi.json) el programa
 
 {"ledsta": 17, "pinoff": 27, "polaridad": 1}
 
+## Actualización de subrutinas
+En la última actualización del sistema operativo del Rpi no se pudo utilizar las rutinas para manejo de la interrupción de espera de estado del pin. Por esta razón se utiliza una variación que utiliza una librería que viene instalada por defecto y que esta documentada en
+
+https://gpiozero.readthedocs.io/
+
+La nueva rutina se codifica en shutdwnbypin.py y se activa con el servicio shutdwnbypin.service.
+
+La subrutina esta basada en el trabajo encontrado en este repositorio
+
+https://github.com/TonyLHansen/raspberry-pi-safe-off-switch
+
+
 
